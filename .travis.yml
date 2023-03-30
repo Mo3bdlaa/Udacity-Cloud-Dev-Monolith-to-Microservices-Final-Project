@@ -16,19 +16,19 @@ before_script:
 script:
         #  - docker --version # print the version for logging
   - docker build -t udagram-api-feed ./udagram-api-feed # build udagram backend feed
-  - docker tag udagram-api-feed mo3bdlaa/udagram-api-feed:v4 # tag the image
+  - docker tag udagram-api-feed mo3bdlaa/udagram-api-feed:v5 # tag the image
   - docker build -t udagram-api-user ./udagram-api-user # backend user
-  - docker tag udagram-api-user mo3bdlaa/udagram-api-user:v4 # tagging
+  - docker tag udagram-api-user mo3bdlaa/udagram-api-user:v5 # tagging
   - docker build -t udagram-frontend ./udagram-frontend # build frontend server ionic
-  - docker tag udagram-frontend mo3bdlaa/udagram-frontend:v4 # tagging
+  - docker tag udagram-frontend mo3bdlaa/udagram-frontend:v5 # tagging
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy # build reverse proxy nginx
-  - docker tag udagram-reverseproxy mo3bdlaa/udagram-reverseproxy:v4 # tagging
+  - docker tag udagram-reverseproxy mo3bdlaa/udagram-reverseproxy:v5 # tagging
 
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push mo3bdlaa/udagram-api-feed:v4
-  - docker push mo3bdlaa/udagram-api-user:v4
-  - docker push mo3bdlaa/udagram-frontend:v4    
-  - docker push mo3bdlaa/udagram-reverseproxy:v4
+  - docker push mo3bdlaa/udagram-api-feed:v5
+  - docker push mo3bdlaa/udagram-api-user:v5
+  - docker push mo3bdlaa/udagram-frontend:v5
+  - docker push mo3bdlaa/udagram-reverseproxy:v5
 
