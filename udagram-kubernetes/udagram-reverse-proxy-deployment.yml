@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: udagram-reverseproxy:latest
+        image: udagram-reverseproxy:v5
         ports:
         - containerPort: 8100
