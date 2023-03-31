@@ -7,5 +7,5 @@ spec:
     app.kubernetes.io/name: user
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8100
+      port: 5432
+      targetPort: 5432

@@ -18,4 +18,4 @@ spec:
       - name: user
         image: mo3bdlaa/udagram-api-user:v5
         ports:
-        - containerPort: 80
+        - containerPort: 5432
