@@ -11,7 +11,7 @@ spec:
     targetPort: 8080
   selector:
     service: backend-user
-
+    
 # apiVersion: v1
 # kind: Service
 # metadata:
