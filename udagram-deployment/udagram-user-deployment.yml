@@ -26,16 +26,16 @@ spec:
             memory: "1024Mi"
             cpu: "500m"
         env:
-        - name: POSTGRESS_PASSWORD
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: env-secret
-              key: POSTGRESS_PASSWORD
-        - name: POSTGRESS_USERNAME
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USERNAME
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRESS_USERNAME
+              key: POSTGRES_USERNAME
         - name: URL
           valueFrom:
             configMapKeyRef:
@@ -46,16 +46,16 @@ spec:
             configMapKeyRef:
               name: env-config
               key: JWT_SECRET
-        - name: POSTGRESS_DATABASE
+        - name: POSTGRES_DATABASE
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRESS_DATABASE
-        - name: POSTGRESS_HOST
+              key: POSTGRES_DATABASE
+        - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRESS_HOST
+              key: POSTGRES_HOST
       restartPolicy: Always
 
 # apiVersion: apps/v1
