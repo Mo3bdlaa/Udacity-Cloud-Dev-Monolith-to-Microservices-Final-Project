@@ -44,7 +44,7 @@ spec:
             secretKeyRef:
               name: env-secret
               key: JWT_SECRET
-        - name: POSTGRES_DATABASE
+        - name: POSTGRES_DB
           valueFrom:
             configMapKeyRef:
               name: env-config
@@ -73,32 +73,3 @@ spec:
       - name: aws-secret
         secret:
           secretName: aws-secret
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: feed-deployment
-#   labels:
-#     app: feed
-# spec:
-#   replicas: 3
-#   selector:
-#     matchLabels:
-#       app: feed
-#   template:
-#     metadata:
-#       labels:
-#         app: feed
-#     spec:
-#       containers:
-#       - name: feed
-#         image: mo3bdlaa/udagram-api-feed:v5
-#         ports:
-#         - containerPort: 80
-#       resources:
-#         requests:
-#           memory: "64Mi"
-#           cpu: "250m"
-#         limits:
-#           memory: "1024Mi"
-#           cpu: "500m"

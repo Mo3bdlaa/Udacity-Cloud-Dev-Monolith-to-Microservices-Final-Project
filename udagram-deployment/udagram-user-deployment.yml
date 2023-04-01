@@ -39,7 +39,7 @@ spec:
             secretKeyRef:
               name: env-secret
               key: JWT_SECRET
-        - name: POSTGRES_DATABASE
+        - name: POSTGRES_DB
           valueFrom:
             configMapKeyRef:
               name: env-config
@@ -50,32 +50,3 @@ spec:
               name: env-config
               key: POSTGRES_HOST
       restartPolicy: Always
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: user-deployment
-#   labels:
-#     app: user
-# spec:
-#   replicas: 3
-#   selector:
-#     matchLabels:
-#       app: user
-#   template:
-#     metadata:
-#       labels:
-#         app: user
-#     spec:
-#       containers:
-#       - name: user
-#         image: mo3bdlaa/udagram-api-user:v5
-#         ports:
-#         - containerPort: 5432
-#       resources:
-#         requests:
-#           memory: "64Mi"
-#           cpu: "250m"
-#         limits:
-#           memory: "1024Mi"
-#           cpu: "500m"
