@@ -15,38 +15,9 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: mo3bdlaa/udagram-reverseproxy:v6
+      - image: mo3bdlaa/udagram-reverseproxy:v7
         name: reverseproxy
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
       restartPolicy: Always
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: reverseproxy-deployment
-#   labels:
-#     app: reverseproxy
-# spec:
-#   replicas: 3
-#   selector:
-#     matchLabels:
-#       app: reverseproxy
-#   template:
-#     metadata:
-#       labels:
-#         app: reverseproxy
-#     spec:
-#       containers:
-#       - name: reverseproxy
-#         image: mo3bdlaa/udagram-reverseproxy:v5
-#         ports:
-#         - containerPort: 8080
