@@ -5,9 +5,9 @@ metadata:
 data:
   POSTGRES_PORT: '5432'
   POSTGRES_HOST: postgres.cw2hrbkx2eha.us-east-1.rds.amazonaws.com
-  POSTGRES_DB: postgres
+  POSTGRES_DATABASE: postgres
   POSTGRES_USERNAME: postgres_user
-  AWS_BUCKET: udacity-udagram-mo3bdlaa-v1
+  AWS_MEDIA_BUCKET: udacity-udagram-mo3bdlaa-v1
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   URL: http://localhost:8100
