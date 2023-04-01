@@ -5,7 +5,7 @@ metadata:
     app: backend-feed
   name: backend-feed
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: backend-feed
@@ -18,13 +18,6 @@ spec:
       - image: mo3bdlaa/udagram-api-feed:v6
         name: backend-feed
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         env:
         - name: URL
           valueFrom:
@@ -55,7 +48,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRES_DATABASE
+              key: POSTGRES_DB
         - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
@@ -102,3 +95,10 @@ spec:
 #         image: mo3bdlaa/udagram-api-feed:v5
 #         ports:
 #         - containerPort: 80
+#       resources:
+#         requests:
+#           memory: "64Mi"
+#           cpu: "250m"
+#         limits:
+#           memory: "1024Mi"
+#           cpu: "500m"

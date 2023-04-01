@@ -5,7 +5,7 @@ metadata:
     app: backend-user
   name: backend-user
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend-user
@@ -18,13 +18,6 @@ spec:
       - image: mo3bdlaa/udagram-api-user:v6
         name: backend-user
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         env:
         - name: POSTGRES_PASSWORD
           valueFrom:
@@ -50,7 +43,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRES_DATABASE
+              key: POSTGRES_DB
         - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
@@ -79,3 +72,10 @@ spec:
 #         image: mo3bdlaa/udagram-api-user:v5
 #         ports:
 #         - containerPort: 5432
+#       resources:
+#         requests:
+#           memory: "64Mi"
+#           cpu: "250m"
+#         limits:
+#           memory: "1024Mi"
+#           cpu: "500m"
