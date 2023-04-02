@@ -13,12 +13,18 @@ spec:
     metadata:
       labels:
         service: frontend
-        # api: external
     spec:
       containers:
       - image: mo3bdlaa/udagram-frontend:v9
         name: frontend
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"
         ports:
         - containerPort: 80
       restartPolicy: Always

@@ -3,7 +3,7 @@ To help review your infrastructure, please include the following screenshots in 
 
 ## Deployment Pipeline
 * DockerHub showing containers that you have pushed [ADDED]
-* GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
+* GitHub repository’s settings showing your Travis webhook [ADDED]
 * Travis CI showing a successful build and deploy job  [ADDED]
 
 ## Kubernetes
@@ -19,7 +19,7 @@ kubectl describe services
 ```bash
 kubectl describe hpa
 ```
-* To verify that you have set up logging with a backend application
+* To verify that you have set up logging with a backend application [ADDED]
 ```bash
 kubectl logs {pod_name}
 ```

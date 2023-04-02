@@ -18,6 +18,13 @@ spec:
       - image: mo3bdlaa/udagram-api-user:v8
         name: backend-user
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"
         env:
         - name: POSTGRES_PASSWORD
           valueFrom:
